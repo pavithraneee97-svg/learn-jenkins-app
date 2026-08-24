@@ -28,7 +28,7 @@ pipeline {
             } 
             steps {
                 sh '''
-                test -f build/idex.html
+                test -f build/index.html
                 mpm test
                 '''
             }
