@@ -40,13 +40,13 @@ pipeline {
         stage('Deploy') {
             agent {
                 docker {
-                    image 'node:18-alphine'
+                    image 'node:18-alpine'
                 }
             } 
             steps {
                 sh '''
                     npm install netlify-cli
-                    node-modules/.bin/netlify --version
+                    node_modules/.bin/netlify --version
                 '''
             }
         }
