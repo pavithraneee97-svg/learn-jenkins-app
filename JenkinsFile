@@ -95,9 +95,11 @@ pipeline {
         }
 
         stage('Approval') {
-            timeout(time: 15, unit: 'MINUTES') {
-                input 'Are you sure to proceed further?'
-             }
+            steps {
+                timeout(time: 15, unit: 'MINUTES') {
+                    input 'Are you sure to proceed further?'
+                }
+            }
         }
 
         stage('Deploy-prod') {
